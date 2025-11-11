@@ -1,0 +1,239 @@
+.profiles {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+#profile-title {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    font-size: 1.3em;
+}
+
+.card-container {
+    perspective: 1000px;
+    height: 420px;
+    width: 300px;
+    background-color: #000;
+    border: 1px solid #ffffff75;
+    border-radius: 15px;
+    box-shadow: 0 0 12px rgba(68, 105, 241, 0.6);
+
+}
+
+.card {
+    transition: transform .6s ease-in-out;
+    transform-style: preserve-3d;
+    height: 100%;
+    width: 100%;
+    position: reltive;
+}
+
+.card-container.flip .card {
+    transform: rotateY(180deg);
+}
+
+.back-side {
+    transform: rotateY(180deg);
+}
+
+.back-side,
+.front-side {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.back-side::before,
+.front-side::before {
+    position: absolute;
+    content: '';
+    background-color: #002ac2;
+    inset: 0;
+
+}
+
+.front-side::before {
+    clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+}
+
+.back-side::before {
+    clip-path: polygon(0% 0%, 100% 0%, 0% 100%);
+}
+
+.front-side .photo {
+    position: absolute;
+    top: 50px;
+    right: -55px;
+    border-radius: 50%;
+    height: 230px;
+    width: 230px;
+    padding: 20px;
+    border: 1px solid rgba(206, 205, 205, 0.514);
+    backdrop-filter: blur(20px);
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.363);
+
+}
+
+.letreiro img {
+    position: absolute;
+    top: 20px;
+    left: 5px;
+}
+
+.photo img {
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.git {
+    position: absolute;
+    top: 150px;
+    left: 20px;
+    writing-mode: sideways-lr;
+}
+
+.git a {
+    color: #fff;
+}
+
+.info-profile {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    line-height: 1.3em;
+}
+
+.info-profile strong {
+    font-size: 1.6em;
+}
+
+.info-profile span {}
+
+.info-icon,
+.back-icon {
+    background-color: transparent;
+    height: 45px;
+    width: 45px;
+    padding: 8px;
+    border: 1px solid #ffffff75;
+    border-radius: 50%;
+    z-index: 2;
+    box-shadow: 0 0 12px rgba(68, 105, 241, .4);
+}
+
+.info-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 10px;
+}
+
+.back-icon {
+    position: absolute;
+    right: 10px;
+    top: 20px;
+}
+
+.info-icon img,
+.back-icon img {
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
+.back-side h3 {
+    position: absolute;
+    top: 30px;
+    left: 15px;
+    text-transform: uppercase;
+    font-weight: lighter;
+
+}
+
+.qr-code {
+    position: absolute;
+    background-color: transparent;
+    top: 65px;
+    left: 18px;
+    z-index: 2;
+}
+
+.qr-code img {
+    height: 100%;
+    width: 100%;
+}
+
+.circle {
+    position: absolute;
+    height: 90px;
+    width: 80px;
+    border: 1px solid #ffffff81;
+    border-radius: 50%;
+    background-color: #0f0e0e;
+    top: 85px;
+    right: -18px;
+    box-shadow: 0 0 4px rgba(255, 255, 255, .5);
+}
+
+.back-side p {
+    position: absolute;
+    top: 180px;
+    width: 90%;
+    left: 20px;
+}
+
+.social-media {
+    position: absolute;
+    bottom: 20px;
+    padding-left: 8px;
+}
+
+.social-media strong {
+    text-transform: uppercase;
+}
+
+.social-media span {
+    font-size: 12px;
+}
+
+.back-side .mascote {
+    position: absolute;
+    bottom: -15px;
+    right: -10px;
+}
+
+
+@media screen and (min-width: 991px) {
+    .profiles {
+        flex-direction: row;
+        margin-top: 50px;
+        justify-content: space-around;
+    }
+
+    #about #profile-title {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        padding-left: 0px;
+        padding: 30px 0;
+    }
+    .card{
+        transition: transform .8s ease-in-out;
+    }
+    .card-container:hover .card {
+        transform: rotateY(180deg);
+    }
+
+    .info-icon,
+    .back-icon {
+        display: none;
+    }
+
+}
