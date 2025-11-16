@@ -14,7 +14,7 @@
 
 .card-container {
     perspective: 1000px;
-    height: 420px;
+    height: 400px;
     width: 300px;
     background-color: #000;
     border: 1px solid #ffffff75;
@@ -102,6 +102,7 @@
 
 .git a {
     color: #fff;
+    font-size: 4vw;
 }
 
 .info-profile {
@@ -112,10 +113,10 @@
 }
 
 .info-profile strong {
-    font-size: 1.6em;
+    font-size: 6vw;
 }
 
-.info-profile span {}
+
 
 .info-icon,
 .back-icon {
@@ -153,8 +154,8 @@
     top: 30px;
     left: 15px;
     text-transform: uppercase;
-    font-weight: lighter;
-
+    font-weight: 470;
+    font-size: 5vw;
 }
 
 .qr-code {
@@ -187,26 +188,35 @@
     top: 180px;
     width: 90%;
     left: 20px;
+    font-size: 4vw;
 }
 
 .social-media {
     position: absolute;
     bottom: 20px;
-    padding-left: 8px;
+    padding-left: 20px;
 }
 
 .social-media strong {
     text-transform: uppercase;
+    font-size: 4vw;
+    font-weight: 580;
 }
 
 .social-media span {
-    font-size: 12px;
+    font-size: 3.7vw;
+}
+
+.social-media span a {
+    color: #fff;
+    z-index: 999;
 }
 
 .back-side .mascote {
     position: absolute;
     bottom: -15px;
     right: -10px;
+    z-index: -1;
 }
 
 
@@ -224,9 +234,16 @@
         padding-left: 0px;
         padding: 30px 0;
     }
-    .card{
+
+    .card {
         transition: transform .8s ease-in-out;
     }
+
+    .card-container {
+        width: 320px;
+        height: 420px;
+    }
+
     .card-container:hover .card {
         transform: rotateY(180deg);
     }
@@ -235,5 +252,42 @@
     .back-icon {
         display: none;
     }
+
+    .social-media span a {
+        font-size: 19px;
+    }
+
+    .social-media span {
+        font-size: 1.05em;
+    }
+
+    .social-media strong {
+        font-size: 1.2em;
+    }
+
+    .back-side p {
+        font-size: 1.2em;
+    }
+
+    .back-side h3 {
+        font-size: 1.4em;
+    }
+
+
+    .git a {
+        color: #fff;
+        font-size: 1.2em;
+    }
+
+    .info-profile{
+        line-height: 1.5em;
+    }
+    .info-profile strong {
+        font-size: 2em;
+    }
+    .info-profile span{
+        font-size: 1.3em;
+    }
+
 
 }

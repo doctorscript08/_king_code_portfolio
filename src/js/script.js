@@ -45,16 +45,45 @@ profileBack.addEventListener('click', () => {
 })
 
 const buttons = document.querySelectorAll('#services .card-desc .btn')
+
 buttons.forEach((button) => {
   button.addEventListener('click', () => {
     const card = button.closest('.card-desc')
+    const content = card.querySelector('#services .desc-service')
+    content.classList.toggle('show-desc')
 
-    const conteudo = card.querySelector('#services .desc-service')
-
-    conteudo.classList.toggle('show-desc')
+    button.classList.toggle('menos')
   })
+})
+
+window.addEventListener('scroll', () =>{
+    const header = document.querySelector('.nav-bar')
+    header.classList.toggle('rolagem', window.scrollY > 0)
+
+     const menus = document.querySelector('.nav-bar .nav-list') 
+    menus.classList.toggle('rolagem', window.scrollY > 0)
+  
 })
 
 
 
 
+const elements = document.querySelectorAll('p, h1, h2, h3, h4, span, strong')
+
+function mostrarAoRolat() {
+  const altura = innerHeight
+  elements.forEach((element, index) => {
+    const distanciaTopo = element.getBoundingClientRect().top
+    const distanciaBottom = element.getBoundingClientRect().bottom
+
+    if (distanciaTopo < altura - 100 && distanciaBottom > 0) {
+      element.style.transitionDelay = '${index * 0.15}s'
+      element.classList.add('visible')
+    }else{
+      element.classList.remove('visible')
+      element.style.transitionDelay = '0s'
+    }
+  })
+}
+
+window.addEventListener('scroll', mostrarAoRolat)
