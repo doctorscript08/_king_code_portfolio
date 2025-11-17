@@ -52,7 +52,19 @@ buttons.forEach((button) => {
     const content = card.querySelector('#services .desc-service')
     content.classList.toggle('show-desc')
 
-    button.classList.toggle('menos')
+    if (content.classList.contains('show-desc')) {
+      content.style.height = content.scrollHeight + 'px'
+      content.style.opacity = '1'
+
+      button.classList.add('menos')
+    } else {
+      content.style.height = '0px'
+      content.style.opacity = '0'
+
+      button.classList.remove('menos')
+    }
+
+    
   })
 })
 
